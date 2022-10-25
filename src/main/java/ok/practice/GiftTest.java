@@ -36,9 +36,3 @@ public class GiftTest extends BaseTest {
     presentPage = new PresentPage();
   }
 }
-
-    UserPage userPage = new UserPage();
-    userPage.pressGiftBtn();
-
-  }
-}
