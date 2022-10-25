@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byXpath;
 
 public class UserPage {
 
-    private static SelenideElement dropMenu = $(byClassName("u-menu_a toggle-dropdown"));
+    private static SelenideElement dropMenu = $(byXpath("//*[@class ='u-menu_a toggle-dropdown']"));
     private static SelenideElement givePresentBtn =
             $(byXpath("//a[@class = \"u-menu_a \" and contains(text(), \"подарок\")]"));
 
