@@ -1,4 +1,4 @@
-package ok.practice.pages;
+package ok.practice;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;

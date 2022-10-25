@@ -3,8 +3,6 @@ package ok.practice;
 import com.codeborne.selenide.Selenide;
 
 import ok.practice.pages.*;
-import org.openqa.selenium.bidi.log.Log;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class GiftTest extends BaseTest {
