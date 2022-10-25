@@ -1,21 +1,20 @@
 package ok.practice;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import ok.practice.pages.OKLoginPage;
-import ok.practice.pages.TestsData;
-import org.asynchttpclient.util.Assertions;
 import org.testng.annotations.Test;
 
 public class GiftTest
 {
-  private final TestsData data = new TestsData();
+  final private String LogInUrl = "https://ok.ru/";
+  final private String ValidUsername = "technoPol5";
+  final private String ValidPassword = "technoPolis2022";
+
   @Test
   public void giveGiftTest()
   {
-
-    Selenide.open(data.LogInUrl);
-    new OKLoginPage().logIn(data.ValidUsername, data.ValidPassword);
+    Selenide.open(LogInUrl);
+    new OKLoginPage().logIn(ValidUsername, ValidPassword);
 
     /*OKPersonalPage personalPage = new OKPersonalPage();
     Assertions.assertEquals(data.LogInUrl, personalPage.getUrl());

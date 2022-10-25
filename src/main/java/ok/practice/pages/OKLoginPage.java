@@ -7,23 +7,26 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class OKLoginPage
 {
-  private final OKLogInPageData data = new OKLogInPageData();
+  private final String usernameBoxLoc = "//*[@name='st.email']";
+  private final String passwordBoxLoc = "//*[@name='st.password']";
+  private final String signInButtonLoc = "//*[@class='button-pro __wide']";
+  private final String errorMessageLoc = "//*[@class='input-e login_error']";
 
 
   public void logIn(String username, String password)
   {
-    $(byXpath(data.usernameBoxLoc)).val(username);
-    $(byXpath(data.passwordBoxLoc)).val(password);
-    $(byXpath(data.signInButtonLoc)).click();
+    $(byXpath(usernameBoxLoc)).val(username);
+    $(byXpath(passwordBoxLoc)).val(password);
+    $(byXpath(signInButtonLoc)).click();
   }
 
   public SelenideElement getLogInErrorMessage()
   {
-    return $(byXpath(data.errorMessageLoc));
+    return $(byXpath(errorMessageLoc));
   }
 
   public SelenideElement getEnterButton()
   {
-    return $(byXpath(data.signInButtonLoc));
+    return $(byXpath(signInButtonLoc));
   }
 }
