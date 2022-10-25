@@ -1,21 +1,26 @@
 package ok.practice.pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import dev.failsafe.internal.util.Assert;
 
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
 public class PresentPage {
-    private static final By PRESENT_BUTTON = byXpath("//a[@data-l='ti,923978881408,t,present']");
-    private static final By BY_BUTTON = byXpath("//a[@class='js-submit-to-friend button-pro __ic']");
-    private static final By SUBMIT_POSTING = byXpath("//a[contains(@class,'svg-fill') and text()='Подарок отправлен']");
+    private static final By PRESENT_BUTTON = byXpath("//div[@data-l='ti,923978881408,t,present']");
+    private static final By BUY_BUTTON = byXpath("//*[@class='js-submit-to-friend button-pro __ic']");
+    private static final By APPROVED_MSG = byXpath("//div[@class='send-present_sent-to-friend']//div");
+    private static final By PAYMENT_FRAME = byXpath("//iframe[@class = 'modal-new_payment-frame']");
 
-    public void present () {
+    public String present () {
         $(PRESENT_BUTTON).click();
-        $(BY_BUTTON).click();
-        $(SUBMIT_POSTING).shouldBe(Condition.visible);
+        Selenide.switchTo().frame($(PAYMENT_FRAME));
+        $(BUY_BUTTON).click();
+        return $(APPROVED_MSG).getOwnText();
     }
 }

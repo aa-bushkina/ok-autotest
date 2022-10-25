@@ -5,6 +5,8 @@ import com.codeborne.selenide.Selenide;
 import ok.practice.pages.*;
 import org.testng.annotations.Test;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 public class GiftTest extends BaseTest {
 
   final private String logInUrl = "https://ok.ru/";
@@ -24,7 +26,7 @@ public class GiftTest extends BaseTest {
     loginPage.logIn(validUsername, validPassword);
     newsPage.findUser("technoPol17");
     userPage.pressGiftBtn();
-    presentPage.present();
+    assertEquals(presentPage.present(), "Подарок отправлен");
   }
 
   private void createPages() {
