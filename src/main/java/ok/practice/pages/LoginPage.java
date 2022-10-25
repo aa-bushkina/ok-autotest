@@ -19,14 +19,4 @@ public class LoginPage
     $(byXpath(passwordBoxLoc)).val(password);
     $(byXpath(signInButtonLoc)).click();
   }
-
-  public SelenideElement getLogInErrorMessage()
-  {
-    return $(byXpath(errorMessageLoc));
-  }
-
-  public SelenideElement getEnterButton()
-  {
-    return $(byXpath(signInButtonLoc));
-  }
 }
