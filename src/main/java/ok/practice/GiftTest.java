@@ -2,6 +2,7 @@ package ok.practice;
 
 import com.codeborne.selenide.Selenide;
 import ok.practice.pages.LoginPage;
+import ok.practice.pages.UserPage;
 import org.testng.annotations.Test;
 
 public class GiftTest
@@ -16,10 +17,9 @@ public class GiftTest
     Selenide.open(LogInUrl);
     new LoginPage().logIn(ValidUsername, ValidPassword);
 
-    /*OKPersonalPage personalPage = new OKPersonalPage();
-    Assertions.assertEquals(data.LogInUrl, personalPage.getUrl());
-    personalPage.getUserNickname().shouldHave(Condition.text(data.FIO));
+    UserPage userPage = new UserPage();
+    userPage.pressGiftBtn();
 
-    personalPage.logOut();*/
+    //personalPage.logOut();
   }
 }
