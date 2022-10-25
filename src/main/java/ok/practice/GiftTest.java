@@ -1,6 +1,7 @@
 package ok.practice;
 
 import com.codeborne.selenide.Selenide;
+
 import ok.practice.pages.*;
 import org.openqa.selenium.bidi.log.Log;
 import org.testng.annotations.BeforeClass;
@@ -36,9 +37,8 @@ public class GiftTest extends BaseTest {
   }
 }
 
+    UserPage userPage = new UserPage();
+    userPage.pressGiftBtn();
 
- /*OKPersonalPage personalPage = new OKPersonalPage();
-    Assertions.assertEquals(data.LogInUrl, personalPage.getUrl());
-    personalPage.getUserNickname().shouldHave(Condition.text(data.FIO));
-
-    personalPage.logOut();*/
+  }
+}
