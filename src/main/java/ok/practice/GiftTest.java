@@ -1,7 +1,7 @@
 package ok.practice;
 
 import com.codeborne.selenide.Selenide;
-import ok.practice.pages.OKLoginPage;
+import ok.practice.pages.LoginPage;
 import org.testng.annotations.Test;
 
 public class GiftTest
@@ -14,7 +14,7 @@ public class GiftTest
   public void giveGiftTest()
   {
     Selenide.open(LogInUrl);
-    new OKLoginPage().logIn(ValidUsername, ValidPassword);
+    new LoginPage().logIn(ValidUsername, ValidPassword);
 
     /*OKPersonalPage personalPage = new OKPersonalPage();
     Assertions.assertEquals(data.LogInUrl, personalPage.getUrl());
